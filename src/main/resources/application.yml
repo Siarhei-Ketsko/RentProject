@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://localhost:5432/rent_tools?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+    username: toolsadmin
+    password: root
+    hikari:
+      maximum-pool-size: 10
+
+---
+
+logging:
+  file:
+    name: /Users/klaks/Documents/logs/rentTools/logging.log
+  pattern:
+#    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: INFO
+    guru.springframework.controllers: INFO
+    org.hibernate: INFO
+
+---
+jwttoken:
+  secret: secret
+  expire: 1000000
+
+
+
+
+#datasource:
+#  driverName: org.postgresql.Driver
+#  url: "jdbc:postgresql://localhost:5432/rent_tools?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+#  login: toolsadmin
+#  password: root
+#  initialSize: 10
+
+#Logger
+#/Users/klaks/Documents/logs/rentTools/logging.log
